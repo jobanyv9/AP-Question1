@@ -19,14 +19,17 @@ public class Main {
         Feeder feeder = new Feeder();
         feeder.setCurrentFood(currentFood);
         feeder.simulateOneDay(numBirds);
-        System.out.println("Initial food: " + currentFood + " and remaining food after simulate with " + numBirds + " birds is: "  + feeder.getCurrentFood());
+        System.out.printf("Initial food: %d, Remaining after simulating with %d birds: %d%n",
+                currentFood, numBirds, feeder.getCurrentFood());
+
     }
 
     public static void testSimulateManyDays(int currentFood, int numBirds, int numDays) {
         Feeder feeder = new Feeder();
         feeder.setCurrentFood(currentFood);
         int daysWithFood = feeder.simulateManyDays(numBirds, numDays);
-        System.out.println("Initial food: " + currentFood + " ,and remaining food after simulate with " + numBirds +  " birds and " + numDays + " days is: "  + feeder.getCurrentFood());
+        System.out.printf("Initial food: %d, Remaining after simulating with %d birds over %d days: %d%n",
+                currentFood, numBirds, numDays, feeder.getCurrentFood());
         System.out.println("Days with food: "  + daysWithFood);
     }
 }
